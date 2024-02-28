@@ -32,3 +32,35 @@ python3 manage.py runserver 0.0.0.0:8000
 
 screen -r # You can reattach to the session later with
 ```
+
+## return JSON format looks like
+``` json
+{
+    "depth": 3,
+    "fanout": 1,
+    "structured_output": {
+        "network_setup": {
+            "controllers": [],
+            "hosts": [
+                "h1"
+            ],
+            "switches": [
+                "s1",
+                "s2",
+                "s3"
+            ],
+            "links": [
+                "(s1, s2)",
+                "(s2, s3)",
+                "(s3, h1)"
+            ]
+        },
+        "execution_details": {
+            "ping_test": "h1 ->",
+            "warnings": [
+                "No packets sent"
+            ],
+            "performance": "5.672 seconds"
+        }
+    }
+}
